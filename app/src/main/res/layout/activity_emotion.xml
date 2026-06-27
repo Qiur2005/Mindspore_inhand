@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 放入: app/src/main/res/layout/activity_emotion.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212">
+
+    <!-- 顶部标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:background="#1E1E1E">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="😊 情绪识别"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_model_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="加载中..."
+            android:textColor="#888888"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- 摄像头预览区 -->
+    <SurfaceView
+        android:id="@+id/sv_camera"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 结果图片（拍照后显示，平时GONE） -->
+    <ImageView
+        android:id="@+id/iv_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:background="#000000" />
+
+    <!-- 情绪结果卡片 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1E1E1E"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- 大情绪标签 -->
+            <TextView
+                android:id="@+id/tv_emotion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="请点击拍照"
+                android:textColor="#AAAAAA"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- 置信度 -->
+            <TextView
+                android:id="@+id/tv_confidence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#CCCCCC"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- 七类情绪说明 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="可识别: 愤怒 / 厌恶 / 恐惧 / 开心 / 悲伤 / 惊讶 / 平静"
+            android:textColor="#666666"
+            android:textSize="12sp" />
+
+        <!-- 拍照按钮 -->
+        <Button
+            android:id="@+id/btn_capture"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:text="📷  拍照识别情绪"
+            android:textSize="17sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#28A745"
+            />
+    </LinearLayout>
+
+</LinearLayout>
+A

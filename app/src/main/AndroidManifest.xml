@@ -12,6 +12,8 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
 
     <application
         android:name=".base.MyApplication"
@@ -63,6 +65,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".emotion.EmotionActivity"
+            android:label="情绪识别"
+            android:screenOrientation="portrait"
+            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

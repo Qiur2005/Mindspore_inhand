@@ -66,6 +66,20 @@ public class MainActivity extends BaseActivity<MainActivityPresenter> implements
         initViewPager();
 //        getUpdateInfo();
         // 直接不检查更新了
+        // 情绪识别悬浮按钮
+        android.widget.Button btnEmotion = new android.widget.Button(this);
+        btnEmotion.setText("😊 情绪识别");
+        btnEmotion.setBackgroundColor(android.graphics.Color.rgb(40, 167, 69));
+        btnEmotion.setTextColor(android.graphics.Color.WHITE);
+        btnEmotion.setOnClickListener(v -> startActivity(
+                new android.content.Intent(this, com.mindspore.himindspore.emotion.EmotionActivity.class)));
+        android.widget.FrameLayout.LayoutParams lp = new android.widget.FrameLayout.LayoutParams(
+                android.widget.FrameLayout.LayoutParams.WRAP_CONTENT,
+                android.widget.FrameLayout.LayoutParams.WRAP_CONTENT);
+        lp.gravity = android.view.Gravity.BOTTOM | android.view.Gravity.END;
+        lp.bottomMargin = 100;
+        lp.rightMargin = 40;
+        ((android.view.ViewGroup) getWindow().getDecorView()).addView(btnEmotion, lp);
     }
 
     @Override
